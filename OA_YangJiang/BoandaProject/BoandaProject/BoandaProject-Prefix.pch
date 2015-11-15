@@ -1,0 +1,48 @@
+//
+// Prefix header for all source files of the 'BoandaProject' target in the 'BoandaProject' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#ifdef DEBUG
+#define DLog(...) NSLog(@"%s %@", __PRETTY_FUNCTION__, [NSString stringWithFormat:__VA_ARGS__])
+
+#else
+#define DLog(...) do { } while (0)
+#endif
+
+//检查更新地址
+#define Update_Check_URL @"ipa/version.json"
+
+//内网下载更新地址
+#define Update_Inner_Download_URL @"ipa/inner/updateapp.html"
+
+//外网下载更新地址
+#define Update_Outer_Download_URL @"ipa/outer/updateapp.html"
+
+//数据同步完毕
+#define kNotifyDataSyncFininshed @"DataSyncFinished"
+
+#define LIGHT_BLUE_UICOLOR [UIColor colorWithRed:231.0/255 green:240.0/255 blue:236.0/255 alpha:1]
+
+#define ONE_PAGE_SIZE 30
+
+//如果定义此宏，表示记录请求的webservice，否则不记录
+#define Save_OperateLog 
+
+//已办任务查询的公文类型
+#define kTaskDone_FW_Tag @"1" //发文
+#define kTaskDone_LW_Tag @"2" //来文
+#define kTaskDone_WBFW_Tag @"3" //微博发文
+#define kTaskDone_WLWZ_Tag @"4" //网络问政
+#define kTaskDone_RWDB_Tag @"5" //任务督办
+#define kTaskDone_HYTZ_Tag @"6" //会议通知
